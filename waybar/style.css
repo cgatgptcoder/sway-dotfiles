@@ -1,0 +1,129 @@
+@define-color bg #101010;
+@define-color fg #c6c6c6;
+@define-color fg_secondary #4E4E4E;
+@define-color accent #827876;
+@define-color dark #282828;
+@define-color border #3E3A39;
+
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: "BlexMono Nerd Font";
+  font-size: 13px;
+  min-height: 0;
+}
+
+tooltip {
+  background: @bg;
+  border-radius: 16px;
+  padding: 5px 12px;
+  margin: 2px;
+}
+
+tooltip label {
+  color: @fg;
+  font-weight: bold;
+  font-family: "BlexMono Nerd Font";
+  font-size: 16px;
+}
+
+#workspaces {
+  background: @bg;
+  margin: 5px 5px;
+  padding: 8px 5px;
+  border-radius: 16px;
+}
+
+#workspaces button {
+  background: @dark;
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+  background-color: @fg_secondary;
+  border-radius: 16px;
+  min-width: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+  /* background: linear-gradient( */
+  /*   45deg, */
+  /*   #8aadf4 0%, */
+  /*   #b7bdf8 43%, */
+  /*   #7dc4e4 80%, */
+  /*   #91d7e3 100% */
+  /* ); */
+  background: @accent;
+  border-radius: 16px;
+  min-width: 50px;
+  transition: all 0.4s ease-in-out;
+}
+
+#tray,
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#window,
+#hyprland-window,
+#bluetooth,
+#custom-notify,
+#custom-playerctl,
+#custom-playerlabel,
+#custom-search {
+  background: @bg;
+  border-radius: 20px;
+  border: 1px;
+  border-color: @border;
+  padding: 5px 12px;
+  margin: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  color: @fg;
+}
+
+#pulseaudio,
+#custom-playerctl {
+  border-radius: 16px 0 0 16px; /* rounded left */
+  padding: 5px 8px;
+  margin: 5px 0 5px 5px;
+}
+
+#bluetooth,
+#custom-playerlabel {
+  border-radius: 0 16px 16px 0; /* rounded right */
+  padding: 5px 10px;
+  margin: 5px 5px 5px 0;
+}
+
+#custom-playerlabel {
+  color: @fg_secondary;
+}
+
+#battery.charging {
+  color: #89dceb;
+}
+
+#battery.warning:not(.charging) {
+  color: @accent;
+}
+
+.modules-left {
+  padding: 0 0 8px 20px;
+}
+
+.modules-center {
+  padding: 0 0 8px 0;
+}
+
+.modules-right {
+  padding: 0 20px 8px 0;
+}
+
+window#waybar {
+  background-color: transparent;
+}
